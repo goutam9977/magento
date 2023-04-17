@@ -1,0 +1,41 @@
+type Query
+    {
+        personinformation :personinformationOutput @resolver(class : "Form\\Empmodule\\Model\\Resolver\\Customer") @doc(description: "person info")
+
+    }
+
+type personinformationOutput
+    {
+        total_count : Int @doc(description: "Total No. of persons"),
+        items : [personinformation] @doc(description: "person Data")
+    }
+
+type personinformation
+    {
+        firstname : String @doc(description: "personFirstName"),
+        lastname : String @doc(description: "personLastName"),
+        email : String @doc(description: "personEmail"),
+        mobile : String @doc(description: "personMobile"),
+        city : String @doc(description: "personCity"),
+        state : String @doc(description: "personState"),
+        country : String @doc(description: "personCountry"),
+    }
+
+type Mutation
+    {
+        addDetails (input: detailsInput! @doc(description:"An input you have to fill")):
+        addDetailsOutput @resolver(class : "Form\\Empmodule\\Model\\Resolver\\statusDisplay")
+        @doc(description: "Mutation output")
+    }
+
+input detailsInput
+    {
+        groupName:String! @doc(description: "Enter groupName")
+    }
+
+type addDetailsOutput
+    {
+        groupName:String @doc(description: "Mutation message")
+    }
+
+

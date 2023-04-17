@@ -1,0 +1,157 @@
+1.create api to display the list of 3 users static data.
+
+Endpoint:/V1/customapi/name
+
+Method : GET
+
+Playload: None
+
+Response:
+
+[
+    {
+        "Firstname": "goutam",
+        "Lastname": "S I",
+        "Email": "goutam@gmail.com",
+        "Telephone": "2536586925",
+        "City": "bengaluru",
+        "State": "Karnataka",
+        "country": "India"
+    },
+    {
+        "Firstname": "goutam",
+        "Lastname": "S I",
+        "Email": "goutam@gmail.com",
+        "Telephone": "2536586925",
+        "City": "bengaluru",
+        "State": "Karnataka",
+        "country": "India"
+    },
+    {
+        "Firstname": "goutam",
+        "Lastname": "S I",
+        "Email": "goutam@gmail.com",
+        "Telephone": "2536586925",
+        "City": "bengaluru",
+        "State": "Karnataka",
+        "country": "India"
+    }
+]
+ 
+ 
+2.Create rest api to create customer group
+
+Endponit: /V1/customapi/name1
+
+Method: POST
+
+Payload:
+{
+    "postdata":
+    {
+            "groupId":10,         
+            "groupName":"alpha1"
+    }
+}
+
+Respose:
+[
+    10,
+    "abc"
+]
+    
+ GraphQl
+ 
+ 1.Create graphql query to display the list of 3 users static data.
+ 
+ Endpoint: /graphql
+ 
+ Method: Query
+ 
+ Payloads: 
+  {
+  personinformation{
+    total_count
+    items{
+    firstname 
+    lastname
+    email
+    mobile 
+    city 
+    state 
+    country
+    }
+  }
+}
+
+
+Respose:
+
+{
+  "data": {
+    "personinformation": {
+      "total_count": 3,
+      "items": [
+        {
+          "firstname": "goutam",
+          "lastname": null,
+          "email": "goutam@emb.com",
+          "mobile": "7385698560",
+          "city": "Bangalore",
+          "state": "Karnataka",
+          "country": "India"
+        },
+        {
+          "firstname": "Ab de",
+          "lastname": null,
+          "email": "abdev@emb.com",
+          "mobile": "8858754857",
+          "city": "Bangalore",
+          "state": "Karnataka",
+          "country": "India"
+        },
+        {
+          "firstname": "rahul",
+          "lastname": null,
+          "email": "rahul@emb.com",
+          "mobile": "7598686581",
+          "city": "Bangalore",
+          "state": "Karnataka",
+          "country": "India"
+        }
+      ]
+    }
+  }
+}
+
+
+2.Create graphql mutation to create customer group
+
+Endpoint: /graphql
+
+Payload:
+mutation {
+  addDetails(input: {groupName: "CodeZero"}) {
+    groupName
+  }
+}
+
+Response: 
+{
+  "data": {
+    "addDetails": {
+      "groupName": "CodeZero"
+    }
+  }
+}
+
+
+3.Cron- Form\Empmodule\Cron\Test
+
+4.Customscript- Rootscript\Test
+
+
+
+
+
+
